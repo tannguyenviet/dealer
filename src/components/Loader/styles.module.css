@@ -1,0 +1,9 @@
+.loader {
+    height: 100%;
+    position: relative;
+}
+
+.spinner {
+    top: 10%;
+    position: relative;
+}
