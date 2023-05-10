@@ -8,6 +8,7 @@ export default function About() {
 	const count = useAppSelector(selectCount);
 	const { data } = useGetMe();
 	console.log({ data });
+	if (!data) return null;
 	return (
 		<div>
 			<h2>About</h2>

@@ -1,6 +1,7 @@
 import { login } from '@/api/auth';
 import { ROUTES } from '@/types/routes';
 import { ACCESS_TOKEN } from '@/utils/constant';
+import { TError } from '@/utils/reactQuery';
 import { useMutation } from '@tanstack/react-query';
 import { Button, Checkbox, Form, Input, message, Typography } from 'antd';
 import { useForm } from 'antd/es/form/Form';
@@ -15,6 +16,10 @@ const Login = () => {
 			localStorage.setItem(ACCESS_TOKEN, data.accessToken);
 			message.success('Login Success');
 			router.push(ROUTES.about);
+		},
+		onError(error: TError) {
+			console.log(error);
+			message.error(error.message);
 		},
 	});
 	const onFinish = async (value: any) => {

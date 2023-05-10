@@ -1,0 +1,31 @@
+.layout {
+    overflow: 'auto';
+    position: fixed !important;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    min-height: 100vh;
+}
+
+
+.userName {
+    height: 32px;
+    margin: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background-color: white;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+}

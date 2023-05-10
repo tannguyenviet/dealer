@@ -1,12 +1,11 @@
 import React from 'react';
 import {
 	DesktopOutlined,
-	FileOutlined,
-	PieChartOutlined,
 	TeamOutlined,
 	UserOutlined,
 	LoginOutlined,
 	LogoutOutlined,
+	HomeOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
@@ -28,6 +27,7 @@ function getItem(
 	} as MenuItem;
 }
 const items: MenuItem[] = [
+	getItem('Dashboard', ROUTES.dashboard, <HomeOutlined />),
 	getItem('About', ROUTES.about, <DesktopOutlined />),
 	getItem('User', ROUTES.user, <UserOutlined />),
 	getItem('Team', 'sub2', <TeamOutlined />, [

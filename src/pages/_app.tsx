@@ -16,7 +16,7 @@ export default function MyApp({ Component, ...pageProps }: AppProps) {
 				<CommonLayout>
 					<Component {...pageProps} />
 				</CommonLayout>
-				<ReactQueryDevtools initialIsOpen={false} />
+				{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 			</QueryClientProvider>
 		</Provider>
 	);

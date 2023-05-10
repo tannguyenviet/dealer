@@ -10,44 +10,33 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, theme } from 'antd';
 import RootMenu from '../root_menu';
 const { Header, Content, Footer, Sider } = Layout;
-
+import styles from './styles.module.css';
 interface MyProps {
 	children?: ReactNode;
 }
 const CommonLayout: FC<MyProps> = ({ children }) => {
-	const [collapsed, setCollapsed] = useState(false);
-	const {
-		token: { colorBgContainer },
-	} = theme.useToken();
+	// const {
+	// 	token: { colorBgContainer },
+	// } = theme.useToken();
 	return (
-		<Layout style={{ minHeight: '100vh' }}>
-			<Sider
-				collapsible
-				collapsed={collapsed}
-				onCollapse={(value) => setCollapsed(value)}
-			>
-				<div
-					style={{
-						height: 32,
-						margin: 16,
-						background: 'rgba(255, 255, 255, 0.2)',
-					}}
-				/>
+		<Layout hasSider>
+			<Sider className={styles.layout}>
+				<div className={styles.userName}>Markie</div>
 				<RootMenu />
 			</Sider>
-			<Layout className='site-layout'>
-				<Content>
+			<Layout className={styles.contentLayout}>
+				{/* <Header style={{ padding: 0, background: colorBgContainer }} /> */}
+				<Content className={styles.content}>
 					<div
 						style={{
-							padding: 24,
-							height: '100%',
-							background: colorBgContainer,
+							background: 'colorBgContainer',
+							minHeight: '100vh',
 						}}
 					>
 						{children}
 					</div>
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>
+				<Footer className={styles.footer}>
 					Ant Design ©2023 Created by Ant UED
 				</Footer>
 			</Layout>
